@@ -1,0 +1,43 @@
+# Comandos de Linux
+
+##1. Configuracion y variables del sistema
+
+##2. Command format
+
+root@OPME:~# sysctl --help
+
+	:::
+		Uso:
+		sysctl [opciones] [variable[=valor] ...]
+		
+		Opciones:
+		-a, --all            mostrar todas las varaibles
+		-A                   alias de -a
+		-X                   alias de -a
+			--deprecated     incluir parámetros obsoletos en la lista
+		-b, --binary         mostrar valor sin nueva línea
+		-e, --ignore         ignorar errores de variables desconocidas
+		-N, --names          mostrar nombres de variables sin valores
+		-n, --values         mostrar solo valores de las variables
+		-p, --load[=<archivo>]  leer valores de archivo
+		-f                   alias de -p
+			--system         leer valores de todos los directorios de sistema
+		-r, --pattern <expresión>
+							seleccionar configuración que cumple con la expresión
+		-q, --quiet          no mostrar eco al establecer la variable
+		-w, --write          activar escritura de un valor a variable
+		-o                   no hace nada
+		-x                   no hace nada
+		-d                   alias de -h
+		
+		-h, --help     mostrar esta ayuda y salir
+		-V, --version  mostrar la información de la versión y salir
+		
+		Para más detalles vea sysctl(8)
+	:::
+
+##3. Example of execute
+
+root@OPME:~#sysctl -p
+
+

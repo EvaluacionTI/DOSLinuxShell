@@ -1,0 +1,115 @@
+# Comandos de Linux
+
+##1. Create group and user
+
+##2. Command format
+
+
+p028036@OPME:~/14Oracle$ addgroup --help
+
+adduser [--home DIR] [--shell INTÉRPRETE] [--no-create-home] [--uid ID]
+[--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup GRUPO | --gid ID]
+[--disabled-password] [--disabled-login] [--add_extra_groups]
+[--encrypt-home] USUARIO
+   Añadir un usuario normal
+
+adduser --system [--home DIR] [--shell INTÉRPRETE] [--no-create-home] [--uid ID]
+[--gecos GECOS] [--group | --ingroup GRUPO | --gid ID] [--disabled-password]
+[--disabled-login] [--add_extra_groups] USUARIO
+   Añadir un usuario del sistema
+
+adduser --group [--gid ID] GRUPO
+addgroup [--gid ID] GRUPO
+   Añadir un grupo de usuario
+
+addgroup --system [--gid ID] GRUPO
+   Añadir un grupo del sistema
+
+adduser USUARIO GRUPO
+   Añadir un usuario existente a un grupo existente
+
+opciones generales:
+  --quiet | -q      no dar información de proceso a stdout
+  --force-badname   permitir nombres de usuario que no coincidan con
+                    la variable de configuración NAME_REGEX[_SYSTEM]
+  --extrausers      usa usuarios extra como la base de datos
+  --help | -h       mensaje sobre el uso
+  --version | -v    número de versión y derechos de autor
+  --conf | -c ARCHIVO  usa ARCHIVO como el archivo de configuración
+
+##3. Adicionando usuario
+
+root@OPME:~# useradd --help
+
+Modo de uso: useradd [opciones] USUARIO
+             useradd -D
+             useradd -D [opciones]
+
+Opciones:
+  -b, --base-dir DIR_BASE       directorio base para el directorio personal
+                                de la nueva cuenta
+  -c, --comment COMENTARIO      campo GECOS de la nueva cuenta
+  -d, --home-dir DIR_PERSONAL   directorio personal de la nueva cuenta
+  -D, --defaults                imprime o cambia la configuración
+                                predeterminada de useradd
+  -e, --expiredate FECHA_CADUCIDAD  fecha de caducidad de la nueva cuenta
+  -f, --inactive INACTIVO       periodo de inactividad de la contraseña
+                                de la nueva cuenta
+  -g, --gid GRUPO               nombre o identificador del grupo primario de
+                                la nueva cuenta
+  -G, --groups GRUPOS           lista de grupos suplementarios de la nueva
+                                cuenta
+  -h, --help                    muestra este mensaje de ayuda y termina
+  -k, --skel DIR_SKEL           utiliza este directorio «skeleton» alternativo
+  -K, --key CLAVE=VALOR         sobrescribe los valores predeterminados de
+                                «/etc/login.defs»
+  -l, --no-log-init             no añade el usuario a las bases de datos de
+                                lastlog y faillog
+  -m, --create-home             crea el directorio personal del usuario
+  -M, --no-create-home          no crea el directorio personal del usuario
+  -N, --no-user-group           no crea un grupo con el mismo nombre que el
+                                usuario
+  -o, --non-unique              permite crear usuarios con identificadores
+                                (UID) duplicados (no únicos)
+  -p, --password CONTRASEÑA     contraseña cifrada de la nueva cuenta
+  -r, --system                  crea una cuenta del sistema
+  -R, --root CHROOT_DIR         directorio en el que hacer chroot
+  -s, --shell CONSOLA           consola de acceso de la nueva cuenta
+  -u, --uid UID                 identificador del usuario de la nueva cuenta
+  -U, --user-group              crea un grupo con el mismo nombre que el
+                                usuario
+  -Z, --selinux-user USUARIO_SE  utiliza el usuario indicado para el usuario
+                                 de SELinux
+      --extrausers              Use the extra users database
+	  
+
+##4. Example 
+
+###4.1 Example group
+
+Se debe ingresar con usuario root
+
+root@OPME:~# addgroup oinstall
+
+Añadiendo el grupo `oinstall' (GID 1001) ...
+Hecho.
+root@OPME:~#
+
+
+###4.2. Example user
+root@OPME:~# useradd -g oinstall -G dba -p password -d /home/oracle -s /bin/bash oracle
+root@OPME:~#
+
+##5. Creación y gestión de usuarios y grupos
+
+	useradd : Añadir un usuario
+	usermod : Modificar un usuario
+	userdel : Eliminar un usuario
+	groupadd : Añadir un grupo.
+	groupmod : Modificar un grupo.
+	groupdel : Eliminar un grupo.
+	
+	el archivo /etc/passwd : en este archivo podemos ver todos los usuarios creados, sus UID y sus GID.
+	el archivo /etc/group : En este archivo podemos ver los GID de los grupos existentes en el sistema, y los usuarios pertenecientes a cada grupo.
+	el archivo /etc/shadow : En este archivo se encuentran cifradas las contraseñas de los usuarios
+

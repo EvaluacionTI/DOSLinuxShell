@@ -1,0 +1,67 @@
+# Comandos de Linux
+
+##1. Cambiar el propietario de grupo o fichero
+
+##2. Command format
+
+
+root@OPME:~# chown --help
+Modo de empleo: chown [OPCIÓN]... [PROPIETARIO][:[GRUPO]] ARCHIVO...
+       o bien:  chown [OPCIÓN]... --reference=ARCHIVO ARCHIVO...
+Cambia el propietario y/o grupo de cada FICHERO a PROPIETARIO y/o GRUPO.
+Con --reference, cambia el propietario y el grupo de cada FICHERO a los
+que tenga FICHERO-R.
+
+  -c, --changes          como `verbose' pero informa sólo de los cambios
+  -f, --silent, --quiet  suprime la mayoría de los mensajes de error
+  -v, --verbose          muestra un mensaje por cada fichero procesado
+      --dereference      afecta al referente de cada enlace simbólico (esta es la opción
+                           predeterminada), en lugar de al propio enlace simbólico
+  -h, --no-dereference   afecta a los enlaces simbólicos en vez de a cualquier
+                           fichero al que apunten
+                         (solamente es útil en sistemas que pueden cambiar el
+                         propietario de un enlace simbólico)
+      --from=PROPIETARIO_ACTUAL:GRUPO_ACTUAL
+                         cambia el propietario y/o el grupo de cada fichero
+                         solamente si su propietario y/o grupo actual coinciden
+                         con los especificados aquí. Se puede omitir cualquiera
+                         de los dos, en cuyo caso no se requiere coincidencia
+                         para el atributo omitido.
+      --no-preserve-root  no trata '/' de forma especial (predeterminado)
+      --preserve-root     no opera recursivamente sobre '/'
+      --reference=FICH_R utiliza el propietario y el grupo de FICH_R en lugar
+                         de especificar valores PROPIETARIO:GRUPO
+  -R, --recursive        opera sobre ficheros y directorios recursivamente
+
+Las siguientes opciones modifican cómo se atraviesa una jerarquía cuando
+se especifica también la opción -R. Si se especifica más de una, solamente
+tiene efecto la última.
+
+  -H                     si un argumento de la línea de órdenes es un enlace
+                         simbólico a un directorio, lo atraviesa
+  -L                     atraviesa cualquier enlace simbólico a un directorio
+                         que se encuentre
+  -P                     no atraviesa ningún enlace simbólico (predeterminado)
+
+      --help     muestra esta ayuda y finaliza
+      --version  informa de la versión y finaliza
+
+El propietario no cambia si se omite. El grupo no cambia si se omite, pero
+cambia al grupo de login si se indica implícitamente con ':' después del
+PROPIETARIO simbólico. PROPIETARIO y GRUPO pueden ser numéricos o simbólicos.
+
+Ejemplos:
+  chown root /u        Cambia el propietario de /u a "root".
+  chown root:staff /u  Similar, pero también cambia el grupo a "staff".
+  chown -hR root /u    Cambia el propietario de /u y subficheros a "root".
+
+ayuda en línea sobre GNU coreutils: <http://www.gnu.org/software/coreutils/>
+Informe de errores de traducción en chown a <http://translationproject.org/team/es.html>
+Full documentation at: <http://www.gnu.org/software/coreutils/chown>
+or available locally via: info '(coreutils) chown invocation'
+
+##3. Example
+
+root@OPME:~#chown -R oracle:dba /home/oracle
+
+

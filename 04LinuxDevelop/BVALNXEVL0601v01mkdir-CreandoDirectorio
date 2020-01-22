@@ -1,0 +1,37 @@
+# Comandos de Linux
+
+##1. Cambiar el propietario de grupo o fichero
+
+##2. Command format
+
+
+root@OPME:~# mkdir --help
+Modo de empleo: mkdir [OPCIÓN]... DIRECTORIO...
+Crea los DIRECTORIO(s), si no existen ya.
+
+Los argumentos obligatorios para las opciones largas son también obligatorios
+para las opciones cortas.
+  -m, --mode=MODE   establece los permisos (como en chmod), en lugar
+                    de  a=rwx - umask
+  -p, --parents     no hay error si existen, crea los directorios padres en
+                    caso necesario
+  -v, --verbose     muestra un mensaje por cada directorio creado
+  -Z                   establece el contexto de seguridad SELinux de cada
+                         directorio creado al tipo predeterminado
+      --context[=CTX]  como -Z, o si se especifica CTX entonces establece el
+                         contexto de seguridad SELinux o SMACK a CTX
+      --help     muestra esta ayuda y finaliza
+      --version  informa de la versión y finaliza
+
+ayuda en línea sobre GNU coreutils: <http://www.gnu.org/software/coreutils/>
+Informe de errores de traducción en mkdir a <http://translationproject.org/team/es.html>
+Full documentation at: <http://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+
+
+
+##3. Example
+
+root@OPME:~#mkdir -p /oracle
+
+

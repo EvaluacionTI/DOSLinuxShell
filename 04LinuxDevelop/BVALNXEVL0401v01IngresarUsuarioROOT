@@ -1,0 +1,25 @@
+# Comandos de Linux
+
+##1. Habilitar e inhabilitar el usuario root
+
+##2. Command format
+
+	Es el comando para intentar iniciar sesión como "superusuario". 
+	Puedes usar ese comando para iniciar sesión como cualquier usuario de la computadora, 
+	pero si lo dejas en blanco, el sistema intentará iniciar sesión con el usuario root
+	
+	Si iniciaste sesión correctamente como usuario root, el símbolo del sistema deberá 
+	finalizar con # en vez de $
+
+	El comando sudo se mantendrá activo hasta cerrar sesión, para que no tengas que 
+	escribir la contraseña del usuario root cada vez que quieras ejecutar un comando.
+
+p028036@OPME:~/14Oracle$ sudo -i
+
+[sudo] contraseña para p028036: 
+root@OPME:~# 
+
+
+## Deshabilitar root
+
+root@OPME:~# sudo passwd -dl root

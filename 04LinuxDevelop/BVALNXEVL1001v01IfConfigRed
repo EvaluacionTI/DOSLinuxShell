@@ -1,0 +1,142 @@
+# Comandos de Windows 
+
+##1. Configuracion y variables del sistema
+
+##2. Instalar comandos Net tools
+
+p028036@OPME:~$sudo apt install net-tools
+
+###A. Se ha realizado la revisión de los diversos tipos con sólo Wireless
+
+##3. Visualizar la configuración de la red linux, cuando esta en tipo NAT
+
+p028036@OPME:~$ifconfig
+	Nota : Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+				inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+				inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+				ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+				RX packets 17  bytes 3414 (3.4 KB)
+				RX errors 0  dropped 0  overruns 0  frame 0
+				TX packets 72  bytes 7950 (7.9 KB)
+				TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+				inet 127.0.0.1  netmask 255.0.0.0
+				inet6 ::1  prefixlen 128  scopeid 0x10<host>
+				loop  txqueuelen 1000  (Bucle local)
+				RX packets 119  bytes 25334 (25.3 KB)
+				RX errors 0  dropped 0  overruns 0  frame 0
+				TX packets 119  bytes 25334 (25.3 KB)
+				TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+
+##4. Visualizar la configuración de la red linux, cuando esta en tipo "RED NAT" / NatNetware
+	Nota : Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+			inet 10.0.2.7  netmask 255.255.255.0  broadcast 10.0.2.255
+			inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+			ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+			RX packets 14  bytes 2174 (2.1 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 75  bytes 7709 (7.7 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+			inet 127.0.0.1  netmask 255.0.0.0
+			inet6 ::1  prefixlen 128  scopeid 0x10<host>
+			loop  txqueuelen 1000  (Bucle local)
+			RX packets 121  bytes 25457 (25.4 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 121  bytes 25457 (25.4 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+
+##5. Visualizar la configuración de la red linux, cuando esta en tipo "ADAPTADOR PUENTE" / Intel(R) Dual Band Wireless-AC 8265
+	Nota : Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+			inet 10.17.204.130  netmask 255.255.248.0  broadcast 10.17.207.255
+			inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+			ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+			RX packets 21  bytes 2958 (2.9 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 74  bytes 8152 (8.1 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+			inet 127.0.0.1  netmask 255.0.0.0
+			inet6 ::1  prefixlen 128  scopeid 0x10<host>
+			loop  txqueuelen 1000  (Bucle local)
+			RX packets 119  bytes 25334 (25.3 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 119  bytes 25334 (25.3 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+
+##6. Visualizar la configuración de la red linux, cuando esta en tipo "RED INTERNA" / IntNet
+	Nota : Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+			inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+			ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+			RX packets 0  bytes 0 (0.0 B)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 30  bytes 4072 (4.0 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+			inet 127.0.0.1  netmask 255.0.0.0
+			inet6 ::1  prefixlen 128  scopeid 0x10<host>
+			loop  txqueuelen 1000  (Bucle local)
+			RX packets 67  bytes 21778 (21.7 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 67  bytes 21778 (21.7 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+
+##7. Visualizar la configuración de la red linux, cuando esta en tipo "ADAPTADOR SOLO ANFITRION" / VirtualBox Host-Only Ethernet Adapter
+	Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+			inet 192.168.56.101  netmask 255.255.255.0  broadcast 192.168.56.255
+			inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+			ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+			RX packets 3  bytes 1298 (1.2 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 54  bytes 6374 (6.3 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+			inet 127.0.0.1  netmask 255.0.0.0
+			inet6 ::1  prefixlen 128  scopeid 0x10<host>
+			loop  txqueuelen 1000  (Bucle local)
+			RX packets 96  bytes 23635 (23.6 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 96  bytes 23635 (23.6 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+	
+##8. Visualizar la configuración de la red linux, cuando esta en tipo "CONTROLADOR GENERICO" / XP94626
+	Se debe reiniciar
+	:::
+		enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+			inet6 fe80::f464:7f32:6027:175b  prefixlen 64  scopeid 0x20<link>
+			ether 08:00:27:a5:37:0d  txqueuelen 1000  (Ethernet)
+			RX packets 0  bytes 0 (0.0 B)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 0  bytes 0 (0.0 B)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	
+		lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+			inet 127.0.0.1  netmask 255.0.0.0
+			inet6 ::1  prefixlen 128  scopeid 0x10<host>
+			loop  txqueuelen 1000  (Bucle local)
+			RX packets 72  bytes 22143 (22.1 KB)
+			RX errors 0  dropped 0  overruns 0  frame 0
+			TX packets 72  bytes 22143 (22.1 KB)
+			TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+	:::
+	

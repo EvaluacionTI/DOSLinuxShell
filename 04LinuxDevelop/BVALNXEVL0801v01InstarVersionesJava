@@ -1,0 +1,30 @@
+# Comandos de Linux
+
+##1. Configuracion y variables del sistema
+
+##2. Instalar Java con este comando
+
+p028036@OPME:~$sudo apt-get install default-jdk
+
+##3. instalar el entorno de ejecución ejecutamos, version actual (11)
+p028036@OPME:~$sudo apt-get install default-jre
+
+##4. Version
+
+p028036@OPME:~$ java -version
+
+##5. Install version java 8
+
+p028036@OPME:~$ sudo apt-get install openjdk-8-jre-headless 
+
+##6. Revisar las version de java
+
+	:::
+		Java nos permite tener diferentes versiones instaladas en el sistema, con el cual podemos 
+		nosotros elegir sobre cual versión trabajar sin la necesidad de volver a instalar alguna 
+		versión pasada sin eliminar una anterior.
+		Mediante el uso de update-alternatives. Podemos realizar dicha configuración que nos 
+		permiten gestionar enlaces simbólicos que utilizaran para diferentes comandos.
+	:::
+
+p028036@OPME:~$ sudo update-alternatives --config java

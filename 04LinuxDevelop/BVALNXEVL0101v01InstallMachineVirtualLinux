@@ -1,0 +1,20 @@
+
+
+1. Máquina Virtual para Base de Datos
+
+Nombre		:	ServerDataBase
+Type		:	Linux
+Version		:	Ubuntu
+Ram			:	4096
+Tipo HD		:	VDI
+Tamaño HD	:	60GB
+
+2. Máquina Virtual para Lenguajes (Python, Go, Swift)
+
+Nombre		:	ServerLanguaje
+Type		:	Linux
+Version		:	Ubuntu
+Ram			:	2048
+Tipo HD		:	VDI
+Tamaño HD	:	40GB
+
