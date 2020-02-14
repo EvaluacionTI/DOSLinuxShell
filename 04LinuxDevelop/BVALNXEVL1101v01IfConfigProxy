@@ -1,0 +1,80 @@
+# Configurar proxy
+
+	Configuración de variables de entorno para distribuciones de la familia Debian|Ubuntu:
+
+##0. Virtualbox
+
+	En virtual box con Linux se tuvo que cambiar al tipo de red nat de adaptador-brige
+	
+
+##1. Verificar los archivos 
+
+p028036@OPME:~$vim /etc/environment
+p028036@OPME:~$vim /etc/bash.bashrc
+p028036@OPME:~$vim /etc/apt/apt.conf
+
+##2. En el archivo environment
+
+	Agregamos las siguientes lineas al archivo, debes duplicarlas en mayúscula y 
+	minúscula porque(desafortunadamente) algunos programas solo buscan una o la otra:
+
+	:::
+		http_proxy http://username:password@proxyserver:puerto
+		https_proxy http://username:password@proxyserver:puerto
+		ftp_proxy http://username:password@proxyserver:puerto
+		no_proxy localhost,127.0.0.1,localaddress,.localdomain.com
+		#Duplicadas en mayusculas
+		HTTP_PROXY http://username:password@proxyserver:puerto
+		HTTPS_PROXY http://username:password@proxyserver:puerto
+		FTP_PROXY http://username:password@proxyserver:puerto
+		NO_PROXY localhost,127.0.0.1,localaddress,.localdomain.com
+	:::
+
+	p028036@OPME:~$vim /etc/environment
+	
+	
+		En minusculas
+		http_proxy http://P028036:bbva2001@118.180.54.170:8080
+		https_proxy http://P028036:bbva2001@118.180.54.170:8080
+		ftp_proxy http://P028036:bbva2001@118.180.54.170:8080
+		no_proxy localhost,127.0.0.1,localhost,*.igrupobbva;150.*;150.250.*;118.220.*;118.180.*;118.190.*;192.168.*;150.100.*;172.25.*;*.grupobbva.com.pe;141.81.*;118.*;118.250.*;scvluxn.cavali.com.pe;scvluxn-oim.cavali.com.pe;scvluxn4.cavali.com.pe;scvluxn-oim1.cavali.com.pe;172.21.2.10;seguintra.intranet.com.mx;*.session.rservices.com;ftp.sbs.gob.pe;200.37.51.42;pwinfhfadrms.pe.igrupobbva;gmdservicedesk1;172.20.19.190;172.20.19.206
+		
+		En mayusculas
+		HTTP_PROXY http://P028036:bbva2001@118.180.54.170:8080
+		HTTPS_PROXY http://P028036:bbva2001@118.180.54.170:8080
+		FTP_PROXY http://P028036:bbva2001@118.180.54.170:8080
+		NO_PROXY localhost,127.0.0.1,localhost,*.igrupobbva;150.*;150.250.*;118.220.*;118.180.*;118.190.*;192.168.*;150.100.*;172.25.*;*.grupobbva.com.pe;141.81.*;118.*;118.250.*;scvluxn.cavali.com.pe;scvluxn-oim.cavali.com.pe;scvluxn4.cavali.com.pe;scvluxn-oim1.cavali.com.pe;172.21.2.10;seguintra.intranet.com.mx;*.session.rservices.com;ftp.sbs.gob.pe;200.37.51.42;pwinfhfadrms.pe.igrupobbva;gmdservicedesk1;172.20.19.190;172.20.19.206
+		
+##3. En el archivo bash.bashrc
+
+	:::
+		export http_proxy=http://username:password@proxyserver.net:port/
+		export https_proxy=http://username:password@proxyserver.net:port/
+		export ftp_proxy=http://username:password@proxyserver.net:port
+	:::
+
+p028036@OPME:~$vim /etc/bash.bashrc
+
+		export http_proxy=http://P028036:bbva2001@118.180.54.170:8080
+		export https_proxy=http://P028036:bbva2001@118.180.54.170:8080
+		export ftp_proxy=http://P028036:bbva2001@118.180.54.170:8080
+
+
+##4. En el archivo /etc/apt/apt.conf
+
+	:::
+		Acquire::http::Proxy "http://username:password@proxyserver:puerto"; 
+		Acquire::https::Proxy "http://username:password@proxyserver:puerto"; 
+		Acquire::ftp::Proxy "http://username:password@proxyserver:puerto";
+		#En caso de tener un repo local para el que no necesitemos proxy 
+		Acquire::http::Proxy {
+		repositorio.localdomain.com DIRECT;
+		repositorio2.localdomain.com DIRECT;
+		};
+	:::
+
+		Acquire::http::Proxy "http://p028036:password@118.180.54.170:8080";
+		Acquire::https::Proxy "http://P028036:password@118.180.54.170:8080";
+		Acquire::ftp::Proxy "http://P028036:password@118.180.54.170:8080";
+
+

@@ -1,0 +1,5 @@
+IP: 118.180.54.170
+Port : 8080
+Excepciones :
+*.igrupobbva;150.*;150.250.*;118.220.*;118.180.*;118.190.*;192.168.*;150.100.*;172.25.*;*.grupobbva.com.pe;141.81.*;118.*;118.250.*;scvluxn.cavali.com.pe;scvluxn-oim.cavali.com.pe;scvluxn4.cavali.com.pe;scvluxn-oim1.cavali.com.pe;172.21.2.10;seguintra.intranet.com.mx;*.session.rservices.com;ftp.sbs.gob.pe;200.37.51.42;pwinfhfadrms.pe.igrupobbva;gmdservicedesk1;172.20.19.190;172.20.19.206
+
