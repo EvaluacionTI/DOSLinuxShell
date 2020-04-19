@@ -1,0 +1,142 @@
+# Opciones de maven
+
+##1. Procedimiento
+
+a) clean	:	borra el directorio de salida (target)
+b) compile	:	compila el proyecto y deja el resultado en target/classes
+c) install	:	guarda el proyecto en el repositorio
+d) test		:	compila los test y los ejecuta
+e) package	:	empaqueta el proyecto y lo dejará en taget
+
+
+D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral>mvn clean
+:::
+	[INFO] Scanning for projects...
+	[INFO]
+	[INFO] -------------< pe.aemsa.module.general.view:ModuleGeneral >-------------
+	[INFO] Building AEMJSEGRL0001v01ModuloGeneral 0.0.1-SNAPSHOT
+	[INFO] --------------------------------[ jar ]---------------------------------
+	[INFO]
+	[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ModuleGeneral ---
+	[INFO] Deleting D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  0.394 s
+	[INFO] Finished at: 2020-04-19T12:50:35-05:00
+	[INFO] ------------------------------------------------------------------------
+:::
+
+D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral>mvn compile
+:::
+	[INFO] Scanning for projects...
+	[INFO]
+	[INFO] -------------< pe.aemsa.module.general.view:ModuleGeneral >-------------
+	[INFO] Building AEMJSEGRL0001v01ModuloGeneral 0.0.1-SNAPSHOT
+	[INFO] --------------------------------[ jar ]---------------------------------
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] Copying 0 resource
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ModuleGeneral ---
+	[INFO] Changes detected - recompiling the module!
+	[INFO] Compiling 6 source files to D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\classes
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  2.049 s
+	[INFO] Finished at: 2020-04-19T12:51:00-05:00
+	[INFO] ------------------------------------------------------------------------
+:::
+
+D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral>mvn install
+
+:::
+	[INFO] Scanning for projects...
+	[INFO]
+	[INFO] -------------< pe.aemsa.module.general.view:ModuleGeneral >-------------
+	[INFO] Building AEMJSEGRL0001v01ModuloGeneral 0.0.1-SNAPSHOT
+	[INFO] --------------------------------[ jar ]---------------------------------
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] Copying 0 resource
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ModuleGeneral ---
+	[INFO] Nothing to compile - all classes are up to date
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] skip non existing resourceDirectory D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\src\test\resources
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ ModuleGeneral ---
+	[INFO] No sources to compile
+	[INFO]
+	[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ ModuleGeneral ---
+	[INFO] No tests to run.
+	[INFO]
+	[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ ModuleGeneral ---
+	[INFO] Building jar: D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\ModuleGeneral-0.0.1-SNAPSHOT.jar
+	[INFO]
+	[INFO] --- maven-install-plugin:2.4:install (default-install) @ ModuleGeneral ---
+	[INFO] Installing D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\ModuleGeneral-0.0.1-SNAPSHOT.jar to C:\Users\p028036\.m2\repository\pe\aemsa\module\general\view\ModuleGeneral\0.0.1-SNAPSHOT\ModuleGeneral-0.0.1-SNAPSHOT.jar
+	[INFO] Installing D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\pom.xml to C:\Users\p028036\.m2\repository\pe\aemsa\module\general\view\ModuleGeneral\0.0.1-SNAPSHOT\ModuleGeneral-0.0.1-SNAPSHOT.pom
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  1.766 s
+	[INFO] Finished at: 2020-04-19T12:51:41-05:00
+	[INFO] ------------------------------------------------------------------------
+:::
+
+D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral>mvn clean compile install
+
+:::
+	[INFO] Scanning for projects...
+	[INFO]
+	[INFO] -------------< pe.aemsa.module.general.view:ModuleGeneral >-------------
+	[INFO] Building AEMJSEGRL0001v01ModuloGeneral 0.0.1-SNAPSHOT
+	[INFO] --------------------------------[ jar ]---------------------------------
+	[INFO]
+	[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ModuleGeneral ---
+	[INFO] Deleting D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] Copying 0 resource
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ModuleGeneral ---
+	[INFO] Changes detected - recompiling the module!
+	[INFO] Compiling 6 source files to D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\classes
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] Copying 0 resource
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ ModuleGeneral ---
+	[INFO] Nothing to compile - all classes are up to date
+	[INFO]
+	[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ModuleGeneral ---
+	[INFO] Using 'UTF-8' encoding to copy filtered resources.
+	[INFO] skip non existing resourceDirectory D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\src\test\resources
+	[INFO]
+	[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ ModuleGeneral ---
+	[INFO] No sources to compile
+	[INFO]
+	[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ ModuleGeneral ---
+	[INFO] No tests to run.
+	[INFO]
+	[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ ModuleGeneral ---
+	[INFO] Building jar: D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\ModuleGeneral-0.0.1-SNAPSHOT.jar
+	[INFO]
+	[INFO] --- maven-install-plugin:2.4:install (default-install) @ ModuleGeneral ---
+	[INFO] Installing D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\target\ModuleGeneral-0.0.1-SNAPSHOT.jar to C:\Users\p028036\.m2\repository\pe\aemsa\module\general\view\ModuleGeneral\0.0.1-SNAPSHOT\ModuleGeneral-0.0.1-SNAPSHOT.jar
+	[INFO] Installing D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral\pom.xml to C:\Users\p028036\.m2\repository\pe\aemsa\module\general\view\ModuleGeneral\0.0.1-SNAPSHOT\ModuleGeneral-0.0.1-SNAPSHOT.pom
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  2.885 s
+	[INFO] Finished at: 2020-04-19T12:52:22-05:00
+	[INFO] ------------------------------------------------------------------------
+:::

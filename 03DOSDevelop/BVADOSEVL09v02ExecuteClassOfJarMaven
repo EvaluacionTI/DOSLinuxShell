@@ -1,0 +1,9 @@
+# Ejecutar una clase del jar de un proyecto Maven
+
+##1. Procedimiento
+
+a) Identificar el paquete donde se ubica : pe.aemsa.general.vista
+b) Identificar la clase a ejecutar = pe.aemsa.general.vista.JF0101v01LoginAcceso
+b) 
+
+D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0001v01ModuloGeneral>mvn exec:java -Dexec.mainClass="pe.aemsa.general.vista.JF0101v01LoginAcceso"

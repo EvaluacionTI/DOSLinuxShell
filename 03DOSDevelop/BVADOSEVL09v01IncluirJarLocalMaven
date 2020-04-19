@@ -1,0 +1,52 @@
+# Incluir un jar local a un proyecto Maven
+
+##1. ¿Cómo agrego archivos jar locales (que aún no forman parte del repositorio de Maven) directamente en las fuentes de la biblioteca de mi proyecto?
+
+##2. Procedimiento : Instale el JAR en su repositorio local de Maven de la siguiente manera:
+
+mvn install:install-file \
+   -Dfile=<path-to-file> \
+   -DgroupId=<group-id> \
+   -DartifactId=<artifact-id> \
+   -Dversion=<version> \
+   -Dpackaging=<packaging> \
+   -DgeneratePom=true
+
+Donde cada uno se refiere a:
+
+<path-to-file>: la ruta al archivo para cargar, por ejemplo, → c:\wallpa-2.3.jar
+
+<group-id>: el grupo en el que se debe registrar el archivo, por ejemplo, → com.google.code
+
+<artifact-id>: el nombre del artefacto para el archivo, por ejemplo, → wallpa
+
+<version>: la versión del archivo, por ejemplo, → 2.3
+
+<packaging>: el paquete del archivo, p. ej. → jar
+
+##3. Aplicando 
+
+Ruta del archivo : D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0101v01UtilidadBDAcceso\dist
+Archivo jar : AEMJSEGRL0101v01UtilidadBDAcceso.jar
+
+mvn install:install-file -Dfile=D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0101v01UtilidadBDAcceso\dist\AEMJSEGRL0101v01UtilidadBDAcceso.jar -DgroupId=pe.aemsa.module.utilities -DartifactId=UtilidadBDAcceso -Dversion=0.1.0 -Dpackaging=jar -DgeneratePom=true
+
+:::
+	[INFO] Scanning for projects...
+	[INFO]
+	[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+	[INFO] Building Maven Stub Project (No POM) 1
+	[INFO] --------------------------------[ pom ]---------------------------------
+	[INFO]
+	[INFO] --- maven-install-plugin:2.4:install-file (default-cli) @ standalone-pom ---
+	[INFO] Installing D:\BBVA2019\27Business\Modulo01General\AEMJSEGRL0101v01UtilidadBDAcceso\dist\AEMJSEGRL0101v01UtilidadBDAcceso.jar to C:\Users\p028036\.m2\repository\pe\aemsa\module\utilities\UtilidadBDAcceso\0.1.0\UtilidadBDAcceso-0.1.0.jar
+	[INFO] Installing C:\Users\p028036\AppData\Local\Temp\mvninstall4161457632625343830.pom to C:\Users\p028036\.m2\repository\pe\aemsa\module\utilities\UtilidadBDAcceso\0.1.0\UtilidadBDAcceso-0.1.0.pom
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  1.093 s
+	[INFO] Finished at: 2020-04-19T10:29:24-05:00
+	[INFO] ------------------------------------------------------------------------
+	
+	D:\Programs\apache-maven-3.6.1\bin>
+:::

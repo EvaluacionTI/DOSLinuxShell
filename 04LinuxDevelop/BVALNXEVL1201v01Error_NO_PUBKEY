@@ -1,0 +1,58 @@
+# Errores en Ubuntu 18.04
+
+	Errores en ubuntu
+	
+##1. Al efectuar el comando :
+
+p028036@OPME:~$ sudo apt-get update
+
+	:::
+		Ign:1 http://cz.archive.ubuntu.com/ubuntu precise InRelease                   
+		Obj:2 http://pe.archive.ubuntu.com/ubuntu bionic InRelease
+		Des:3 http://cz.archive.ubuntu.com/ubuntu precise Release [49,6 kB]
+		Des:4 http://cz.archive.ubuntu.com/ubuntu precise Release.gpg [198 B]         
+		Ign:4 http://cz.archive.ubuntu.com/ubuntu precise Release.gpg
+		Ign:5 http://cz.archive.ubuntu.com/ubuntu precise/main amd64 Packages
+		Obj:6 http://cz.archive.ubuntu.com/ubuntu precise/main i386 Packages
+		Ign:6 http://cz.archive.ubuntu.com/ubuntu precise/main i386 Packages
+		Obj:7 http://cz.archive.ubuntu.com/ubuntu precise/universe amd64 Packages
+		Ign:7 http://cz.archive.ubuntu.com/ubuntu precise/universe amd64 Packages
+		Obj:8 http://cz.archive.ubuntu.com/ubuntu precise/universe i386 Packages
+		Ign:8 http://cz.archive.ubuntu.com/ubuntu precise/universe i386 Packages
+		Obj:5 http://cz.archive.ubuntu.com/ubuntu precise/main amd64 Packages
+		Obj:6 http://cz.archive.ubuntu.com/ubuntu precise/main i386 Packages          
+		Obj:7 http://cz.archive.ubuntu.com/ubuntu precise/universe amd64 Packages     
+		Obj:8 http://cz.archive.ubuntu.com/ubuntu precise/universe i386 Packages      
+		Descargados 49,8 kB en 3min 47s (219 B/s)                                     
+		Leyendo lista de paquetes... Hecho
+		W: Error de GPG: http://cz.archive.ubuntu.com/ubuntu precise Release: Las firmas siguientes no se pudieron verificar porque su clave pública no está disponible: NO_PUBKEY 40976EAF437D05B5
+	:::
+
+##2. Error :
+
+	:::
+		W: Error de GPG: http://cz.archive.ubuntu.com/ubuntu precise Release: Las firmas siguientes no se 
+		pudieron verificar porque su clave pública no está disponible: NO_PUBKEY 40976EAF437D05B5
+	:::
+
+##3. Solución
+	Lo que hace este comando es consultar a un servidor seguro de Ubuntu y actualizar la clave pública del repositorio con una válida.
+	Esto lo tendremos que hacer con cada clave que salte cuando intentemos actualizar, reemplazando 40976EAF437D05B5 por la siguiente.
+
+
+p028036@OPME:~$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+
+	:::
+		Executing: /tmp/apt-key-gpghome.aMgeud5k12/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
+		gpg: key 40976EAF437D05B5: 60 firmas no comprobadas por falta de claves
+		gpg: clave 40976EAF437D05B5: clave pública "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>" importada
+		gpg: Cantidad total procesada: 1
+		gpg:               importadas: 1
+	:::
+
+
+
+
+
+
+

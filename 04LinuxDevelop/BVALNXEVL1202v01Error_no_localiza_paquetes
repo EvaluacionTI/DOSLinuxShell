@@ -1,0 +1,126 @@
+# Errores en Ubuntu 18.04
+
+	Errores en ubuntu
+	
+##1. Al efectuar el comando :
+
+p028036@OPME:~$ sudo apt-get install ndctl
+	:::
+		Leyendo lista de paquetes... Hecho
+		Creando árbol de dependencias       
+		Leyendo la información de estado... Hecho
+		E: No se ha podido localizar el paquete ndctl
+	:::
+	
+##2. Error : No se ha podido localizar el paquete ndctl
+
+##3. Solution
+
+###3.1. Verificar con ping 8.8.8.8, conexion a internet
+
+	p028036@OPME:~$ ping 8.8.8.8
+	:::
+		PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+		64 bytes from 8.8.8.8: icmp_seq=1 ttl=48 time=87.8 ms
+		64 bytes from 8.8.8.8: icmp_seq=2 ttl=48 time=85.2 ms
+		64 bytes from 8.8.8.8: icmp_seq=3 ttl=48 time=108 ms
+		64 bytes from 8.8.8.8: icmp_seq=4 ttl=48 time=192 ms
+		64 bytes from 8.8.8.8: icmp_seq=5 ttl=48 time=107 ms
+		64 bytes from 8.8.8.8: icmp_seq=6 ttl=48 time=84.8 ms
+		64 bytes from 8.8.8.8: icmp_seq=7 ttl=48 time=84.4 ms
+		64 bytes from 8.8.8.8: icmp_seq=8 ttl=48 time=102 ms
+		64 bytes from 8.8.8.8: icmp_seq=9 ttl=48 time=83.3 ms
+		64 bytes from 8.8.8.8: icmp_seq=10 ttl=48 time=84.0 ms
+		64 bytes from 8.8.8.8: icmp_seq=11 ttl=48 time=84.6 ms
+		^C
+		--- 8.8.8.8 ping statistics ---
+		24 packets transmitted, 24 received, 0% packet loss, time 23039ms
+		rtt min/avg/max/mdev = 83.372/473.736/1708.476/587.494 ms, pipe 2
+	:::
+
+###3.2 Verificar el archivo de sources.list
+
+p028036@OPME:~$ ls -l /etc/apt/sources.list
+	:::
+		-rw-rw-r-- 1 root root 2409 ene 15 17:17 /etc/apt/sources.list
+	:::
+
+###3.3. Editar el archivos de fuentes
+
+p028036@OPME:~$ vim /etc/apt/sources.list
+
+###3.4 Buscar en google "sources.list ndctl"
+En el link que se visualiza "source.list ndctl": https://docs.pmem.io/persistent-memory/getting-started-guide/installing-ndctl
+En la cual le indica el procedimiento a realizar:
+ 
+####3.3.1 p028036@OPME:~$ sudo apt install aptitude
+:::
+Leyendo lista de paquetes... Hecho
+Creando árbol de dependencias       
+Leyendo la información de estado... Hecho
+Se instalarán los siguientes paquetes adicionales:
+  aptitude-common libcwidget3v5 libsigc++-2.0-0v5 libxapian30
+Paquetes sugeridos:
+  aptitude-doc-en | aptitude-doc apt-xapian-index debtags tasksel
+  libcwidget-dev xapian-tools
+Se instalarán los siguientes paquetes NUEVOS:
+  aptitude aptitude-common libcwidget3v5 libsigc++-2.0-0v5
+  libxapian30
+0 actualizados, 5 nuevos se instalarán, 0 para eliminar y 0 no actualizados.
+Se necesita descargar 3.209 kB de archivos.
+Se utilizarán 13,5 MB de espacio de disco adicional después de esta operación.
+¿Desea continuar? [S/n] s
+Des:1 http://pe.archive.ubuntu.com/ubuntu bionic/main amd64 aptitude-common all 0.8.10-6ubuntu1 [1.014 kB]
+Des:2 http://pe.archive.ubuntu.com/ubuntu bionic/main amd64 libsigc++-2.0-0v5 amd64 2.10.0-2 [10,9 kB]
+Des:3 http://pe.archive.ubuntu.com/ubuntu bionic/main amd64 libcwidget3v5 amd64 0.5.17-7 [286 kB]
+Des:4 http://pe.archive.ubuntu.com/ubuntu bionic/main amd64 libxapian30 amd64 1.4.5-1 [629 kB]
+Des:5 http://pe.archive.ubuntu.com/ubuntu bionic/main amd64 aptitude amd64 0.8.10-6ubuntu1 [1.269 kB]
+Descargados 3.209 kB en 47s (68,4 kB/s)                              
+Seleccionando el paquete aptitude-common previamente no seleccionado.
+(Leyendo la base de datos ... 170960 ficheros o directorios instalados actualmente.)
+Preparando para desempaquetar .../aptitude-common_0.8.10-6ubuntu1_all.deb ...
+Desempaquetando aptitude-common (0.8.10-6ubuntu1) ...
+Seleccionando el paquete libsigc++-2.0-0v5:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../libsigc++-2.0-0v5_2.10.0-2_amd64.deb ...
+Desempaquetando libsigc++-2.0-0v5:amd64 (2.10.0-2) ...
+Seleccionando el paquete libcwidget3v5:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../libcwidget3v5_0.5.17-7_amd64.deb ...
+Desempaquetando libcwidget3v5:amd64 (0.5.17-7) ...
+Seleccionando el paquete libxapian30:amd64 previamente no seleccionado.
+Preparando para desempaquetar .../libxapian30_1.4.5-1_amd64.deb ...
+Desempaquetando libxapian30:amd64 (1.4.5-1) ...
+Seleccionando el paquete aptitude previamente no seleccionado.
+Preparando para desempaquetar .../aptitude_0.8.10-6ubuntu1_amd64.deb ...
+Desempaquetando aptitude (0.8.10-6ubuntu1) ...
+Configurando libxapian30:amd64 (1.4.5-1) ...
+Configurando aptitude-common (0.8.10-6ubuntu1) ...
+Configurando libsigc++-2.0-0v5:amd64 (2.10.0-2) ...
+Configurando libcwidget3v5:amd64 (0.5.17-7) ...
+Configurando aptitude (0.8.10-6ubuntu1) ...
+update-alternatives: utilizando /usr/bin/aptitude-curses para proveer /usr/bin/aptitude (aptitude) en modo automático
+Procesando disparadores para man-db (2.8.3-2ubuntu0.1) ...
+Procesando disparadores para libc-bin (2.27-3ubuntu1) ...
+:::
+
+###3.3.2 Query the repository to identify if ndctl is delivered using either the aptitude, apt-cache, or apt utilities
+
+p028036@OPME:~$ aptitude search ndctl
+p028036@OPME:~$ apt-cache search ndctl        
+p028036@OPME:~$ apt search ndctl
+	:::
+		Ordenando... Hecho
+		Buscar en todo el texto... Hecho
+	:::
+
+###3.3.3 Verify if the ndctl package is currently installed and check the version
+p028036@OPME:~$ apt list --installed ndctl
+	:::
+		Listando... Hecho
+	:::
+
+###3.3.4 Install the ndctl package or update an installed package
+
+p028036@OPME:~$ sudo apt install -y git gcc g++ autoconf automake asciidoc asciidoctor bash-completion xmlto libtool pkg-config libglib2.0-0 libglib2.0-dev libfabric1 libfabric-dev doxygen graphviz pandoc libncurses5 libkmod2 libkmod-dev libudev-dev uuid-dev libjson-c-dev libkeyutils-dev
+
+* No instala asciidoc, libglib2.0-dev libfabric1 libfabric-dev doxygen
+
